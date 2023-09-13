@@ -1,41 +1,35 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FaceSnap } from '../models/face-snap.model';
 
 @Component({
   selector: 'app-face-snap',
   templateUrl: './face-snap.component.html',
-  styleUrls: ['./face-snap.component.css'],
+  styleUrls: [ './face-snap.component.css' ]
 })
+
 export class FaceSnapComponent implements OnInit {
+  @Input() faceSnap!:FaceSnap;
 
-  title!: string;
-  description!: string;
-  createdDate!: Date;
-  snaps!: number;
-  imageUrl!: string;
-  buttonText!: string;
+  imageUrl:string;
+  buttonReaction:string;
 
-  ngOnInit() {
-
-    this.title = 'mathis';
-    this.description = 'moi meme';
-    this.createdDate = new Date();
-    this.snaps = 5;
-    this.imageUrl =
-      'https://images.assetsdelivery.com/compings_v2/uasumy/uasumy1701/uasumy170100015.jpg';
-    this.buttonText = 'Oh Snap !!';
+  ngOnInit(){
+    
+    this.imageUrl='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbHF2kIovUEvs9xabxDqQMqajNpwt1Y07hOw&usqp=CAU';
+    this.buttonReaction='Oh Snaps !';
   }
 
-  onClickSnap() {
-    if(this.buttonText=='Oh Snap !!'){
-      this.snaps++;
-      this.buttonText='Oops un Snap';
+  onClickSnap(){
+    if(this.buttonReaction=='Oh Snaps !'){
+      this.faceSnap.snaps++;
+      this.buttonReaction='Oops deja Snaps !';
     }
     else{
-      this.snaps--;
-      this.buttonText='Oh Snap !!';
+      this.faceSnap.snaps--;
+      this.buttonReaction='Oh Snaps !';
     }
-   
   }
 
+
 }
+

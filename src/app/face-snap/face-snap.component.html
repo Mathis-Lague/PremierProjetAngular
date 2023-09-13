@@ -1,11 +1,9 @@
-<div id="Tout">
-  <h2>{{ title }}</h2>
-  <p>Mis en ligne le {{ createdDate }}</p>
-  <p>{{ description }}</p>
-  <img [src]="imageUrl" [alt]="title" >
-  <p>
-    <button (click)="onClickSnap()">{{ buttonText}}</button>
-    Snap vus {{ snaps }} fois</p>
-
-
+<div id="tout">
+  <h1>{{ faceSnap.titre }}</h1>
+  <p>{{ faceSnap.description }}</p>
+  <p>{{ faceSnap.createdDate }}</p>
+  <img [src]="imageUrl" />
+  <!-- Utilisation de crochets parce que ce ne sera pas toujours des string -->
+  <button (click) ="onClickSnap()">{{buttonReaction}}</button>
+  <p>{{ faceSnap.snaps }} snaps recus</p>
 </div>

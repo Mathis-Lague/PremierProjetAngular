@@ -12,6 +12,7 @@ import { FaceSnapComponent } from './face-snap/face-snap.component';
     FormsModule,
     BrowserAnimationsModule,
     MultiSelectModule,
+
   ],
   declarations: [AppComponent, FaceSnapComponent],
   bootstrap: [AppComponent],
