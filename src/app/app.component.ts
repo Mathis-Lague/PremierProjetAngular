@@ -8,21 +8,42 @@ import { FaceSnap } from './models/face-snap.model';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent implements OnInit { //implementer OnInit pour initialiser les variables
+  faceSnaps!:FaceSnap[];
   mySnap!:FaceSnap;
   myOtherSnap!:FaceSnap;
   
   ngOnInit(){//méthode utlisée quand les données sont initialisées
-    this.mySnap=new FaceSnap(
-      'arnaud',
-      'mon pote',
-      new Date(),
-      10,
-    );
-    this.myOtherSnap=new FaceSnap(
-      'jean',
-      'mon autre pote',
-      new Date(),
-      15,
-    );
+    this.faceSnaps=[
+      this.mySnap={
+        titre:'arnaud',
+        description:'mon pote',
+        createdDate:new Date(),
+        snaps:10,
+        location:'Paris',
+      },
+      this.myOtherSnap={
+        titre:'jean',
+        description:'mon autre pote',
+        createdDate:new Date(),
+        snaps:15,
+    
+      },
+      this.mySnap={
+        titre:'arnaud',
+        description:'mon pote',
+        createdDate:new Date(),
+        snaps:10,
+        location:'Paris',
+      },
+      this.myOtherSnap={
+        titre:'jean',
+        description:'mon autre pote',
+        createdDate:new Date(),
+        snaps:15,
+    
+      }
+      
+    ]
+    
   }
 }

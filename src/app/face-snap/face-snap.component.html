@@ -3,6 +3,7 @@
   <h1>{{ faceSnap.titre }}</h1>
   <p>{{ faceSnap.description }}</p>
   <p>{{ faceSnap.createdDate }}</p>
+  <p *ngIf="faceSnap.location">snap fait a {{faceSnap.location}}</p>
   <img [src]="imageUrl" />
   <!-- Utilisation de crochets parce que ce ne sera pas toujours des string -->
   <button (click) ="onClickSnap()">{{buttonReaction}}</button>
