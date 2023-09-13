@@ -5,7 +5,7 @@ import { FaceSnap } from '../models/face-snap.model';// penser à toujours impor
 @Component({
   selector: 'app-face-snap',//hyper important puisque c'est la balise html qui est utilisée
   templateUrl: './face-snap.component.html',
-  styleUrls: [ './face-snap.component.css' ]
+  styleUrls: [ './face-snap.component.scss' ]
 })
 
 export class FaceSnapComponent implements OnInit {

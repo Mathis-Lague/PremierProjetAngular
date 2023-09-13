@@ -18,14 +18,14 @@ export class AppComponent implements OnInit { //implementer OnInit pour initiali
         titre:'arnaud',
         description:'mon pote',
         createdDate:new Date(),
-        snaps:10,
+        snaps:310,
         location:'Paris',
       },
       this.myOtherSnap={
         titre:'jean',
         description:'mon autre pote',
         createdDate:new Date(),
-        snaps:15,
+        snaps:150,
     
       },
       this.mySnap={

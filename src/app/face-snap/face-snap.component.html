@@ -1,12 +1,20 @@
 <!-- faceSnap devant tous les objets de la classe pour qu'ils soient liés aux objets créés dans les classes -->
-<div id="tout">
-  <h1>{{ faceSnap.titre }}</h1>
-  <p>{{ faceSnap.description }}</p>
-  <p>{{ faceSnap.createdDate }}</p>
-  <p *ngIf="faceSnap.location">snap fait a {{faceSnap.location}}</p>
+<div class="tout snapped" [ngClass]="{ snapped: buttonReaction == 'Oh Snaps !'}">
+  <p>Test de pipe dessous</p>
+  <p>{{ 4353622.223 | number: '1.0-1'}}</p>
+  <p>{{ 0.336 | percent:'1.0-1'}}</p>
+  <p>{{ 344.36 | currency: 'EUR' }}</p>
+
+
+
+  <h1>{{ faceSnap.titre | uppercase}}</h1>
+  <p>{{ faceSnap.description | titlecase}}</p>
+  <p>{{ faceSnap.createdDate | date: 'd MMMM yyyy'}}</p>
+  <p *ngIf="faceSnap.location">snap fait a {{ faceSnap.location }}</p>
   <img [src]="imageUrl" />
   <!-- Utilisation de crochets parce que ce ne sera pas toujours des string -->
-  <button (click) ="onClickSnap()">{{buttonReaction}}</button>
-  <p>{{ faceSnap.snaps }} snaps recus</p>
+  <button (click)="onClickSnap()">{{ buttonReaction }}</button>
+  <span [ngStyle]="{ color: 'rgb(0,' + faceSnap.snaps + ', 0)' }"
+    >{{ faceSnap.snaps }} snaps recus</span>
   <!-- le bouton marche pour tous maintenant -->
 </div>
