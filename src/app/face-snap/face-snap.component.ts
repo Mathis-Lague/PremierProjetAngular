@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FaceSnap } from '../models/face-snap.model';
+import { FaceSnap } from '../models/face-snap.model';// penser à toujours importer sinon bug
+
 
 @Component({
-  selector: 'app-face-snap',
+  selector: 'app-face-snap',//hyper important puisque c'est la balise html qui est utilisée
   templateUrl: './face-snap.component.html',
   styleUrls: [ './face-snap.component.css' ]
 })
@@ -21,7 +22,7 @@ export class FaceSnapComponent implements OnInit {
 
   onClickSnap(){
     if(this.buttonReaction=='Oh Snaps !'){
-      this.faceSnap.snaps++;
+      this.faceSnap.snaps++;//faceSnap devant pour que ca mette a jour pour chaque instance créée.
       this.buttonReaction='Oops deja Snaps !';
     }
     else{
